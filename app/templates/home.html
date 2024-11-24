@@ -48,9 +48,9 @@
                             <h3 class="card-title">{{ img.name }}</h3>
                             <p class="card-text">
                                 <strong> <!-- Estatus de los personajes -->
-                                    {% if true == 'Alive' %} 🟢 {{ img.status }}
+                                    {% if img.status == 'Alive' %} 🟢 {{ img.status }}
                                     <span class="border border-success"></span> 
-                                    {% elif true == 'Dead' %} 🔴 {{ img.status }}
+                                    {% elif img.status == 'Dead' %} 🔴 {{ img.status }}
                                     <span class="border border-danger"></span> 
                                     {% else %} 🟠 {{ img.status }}
                                     <span class="border border-warning"></span> 
