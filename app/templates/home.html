@@ -47,12 +47,15 @@
                         <div class="card-body">
                             <h3 class="card-title">{{ img.name }}</h3>
                             <p class="card-text">
-                                <strong>
-                                            {% if true == 'Alive' %} 🟢 {{ img.status }} 
-                                            {% elif true == 'Dead' %} 🔴 {{ img.status }} 
-                                            {% else %} 🟠 {{ img.status }} 
-                                            {% endif %}
-                                        </strong>
+                                <strong> <!-- Estatus de los personajes -->
+                                    {% if true == 'Alive' %} 🟢 {{ img.status }}
+                                    <span class="border border-success"></span> 
+                                    {% elif true == 'Dead' %} 🔴 {{ img.status }}
+                                    <span class="border border-danger"></span> 
+                                    {% else %} 🟠 {{ img.status }}
+                                    <span class="border border-warning"></span> 
+                                    {% endif %}
+                                </strong>
                             </p>
                             <p class="card-text"><small class="text-body-secondary">Última ubicación: {{ img.last_location }}</small></p>
                             <p class="card-text"><small class="text-body-secondary">Episodio inicial: {{ img.first_seen }}</small></p>
