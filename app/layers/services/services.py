@@ -7,8 +7,8 @@ from ..transport.transport import getAllImages as fetchDataFromApi
 
 def getAllImages(input=None):
     # obtiene un listado de datos "crudos" desde la API, usando a transport.py.
-    json_collection = [fetchDataFromApi(input)]
-
+    json_collection = fetchDataFromApi(input)
+    
     # recorre cada dato crudo de la colección anterior, lo convierte en una Card y lo agrega a images.
     images = [translator.fromRequestIntoCard(item) for item in json_collection]
 

@@ -4,7 +4,7 @@ from django.shortcuts import redirect, render
 from .layers.services import services
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth import logout
-from app.layers.transport.transport import getAllImages  #se busca la ubicacion de transport.py en donde esta y se llama a la funcion
+from app.layers.services.services import getAllImages  #se busca la funcion y se la llama desde services
 
 def index_page(request):
     return render(request, 'index.html')
@@ -14,6 +14,7 @@ def index_page(request):
 def home(request):
     images = getAllImages() #se llama a la funcion y la guarda en una variable
     favourite_list = []
+    
 
     return render(request, 'home.html', { 'images': images, 'favourite_list': favourite_list })
 
@@ -45,3 +46,4 @@ def deleteFavourite(request):
 @login_required
 def exit(request):
     pass
+
